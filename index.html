@@ -952,6 +952,26 @@
     #hero {
   padding-top: 110px !important;
 }
+    @media (max-width: 720px) {
+
+  /* Push hero content downward */
+  #hero {
+    padding-top: 160px !important;
+  }
+
+  /* Increase nav inner spacing */
+  .top-nav-inner {
+    padding: 16px 14px !important;
+  }
+
+  /* Stack nav links vertically */
+  .nav-links {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100%;
+    gap: 8px !important;
+  }
+}
   </style>
 </head>
 <body>
@@ -1494,5 +1514,6 @@
   </script>
 </body>
 </html>
+
 
 
