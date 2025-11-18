@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TRISCEND 1.0 | IEEE CUET WIE AG SB</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TRISCEND 1.0 – National-level flagship event by IEEE CUET WIE Affinity Group Student Branch. Inspiring Innovation, Ethics & Futuristic Thinking." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-deep-1: #001f0f;
+      --bg-deep-2: #003d25;
+      --bg-deep-3: #005833;
+      --accent: #7cff84;
+      --text-main: #e8ffe8;
+      --text-soft: #c6e6c6;
+      --text-muted: #9fb9a3;
+      --soft-gold: #e0c680;
+      --card-bg: rgba(0, 31, 15, 0.9);
+      --border-soft: rgba(124, 255, 132, 0.2);
+      --shadow-glow: 0 0 24px rgba(124, 255, 132, 0.35);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
+      --transition-fast: 0.24s ease-out;
+      --transition-med: 0.4s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #003d25 0, #001f0f 40%, #000b06 100%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-wrapper {
+      min-height: 100vh;
+      color: var(--text-main);
+    }
+
+    /* Global Layout & Helpers */
+
+    section {
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    @media (min-width: 900px) {
+      section {
+        padding: 100px 24px;
+      }
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      letter-spacing: 0.04em;
+    }
+
+    h2.section-title {
+      font-size: clamp(1.9rem, 3vw, 2.3rem);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2.section-title::after {
+      content: "";
+      display: inline-block;
+      width: 60px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--soft-gold));
+      opacity: 0.7;
+    }
+
+    p.section-subtitle {
+      max-width: 640px;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(124, 255, 132, 0.35);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-soft);
+      background: radial-gradient(circle at top left, rgba(124, 255, 132, 0.15), transparent 55%);
+    }
+
+    .pill span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px rgba(124, 255, 132, 0.9);
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      border-radius: var(--radius-pill);
+      padding: 12px 26px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid rgba(124, 255, 132, 0.45);
+      color: #ffffff;
+      background: linear-gradient(135deg, #005833, #003d25);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition:
+        background var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        border-color var(--transition-fast);
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(124, 255, 132, 0.35), transparent 60%);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: var(--shadow-glow);
+      border-color: var(--accent);
+    }
+
+    .btn:hover::before {
+      opacity: 1;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+      border-color: rgba(124, 255, 132, 0.4);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 88, 51, 0.4);
+    }
+
+    .muted {
+      color: var(--text-muted);
+    }
+
+    /* Scroll Reveal */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity var(--transition-med),
+        transform var(--transition-med);
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* HERO SECTION */
+
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      padding: 18px 20px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #003d25 0, #001f0f 35%, #000804 100%);
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(124, 255, 132, 0.12), transparent 55%);
+      opacity: 0.9;
+      z-index: 0;
+    }
+
+    #hero canvas#hero-particles {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 0;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #hero {
+        padding-top: 70px;
+      }
+    }
+
+    .hero-left {
+      position: relative;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4.1vw, 3.1rem);
+      line-height: 1.1;
+      margin: 14px 0 10px;
+      text-transform: uppercase;
+    }
+
+    .hero-title span.accent {
+      background: linear-gradient(120deg, var(--accent), var(--soft-gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 12px rgba(124, 255, 132, 0.35);
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      color: var(--text-soft);
+      max-width: 420px;
+      line-height: 1.7;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 20px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.38);
+      border: 1px solid rgba(124, 255, 132, 0.18);
+    }
+
+    .hero-meta-item span.icon {
+      font-size: 1rem;
+    }
+
+    .hero-orbit {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 1/1;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 10%, rgba(124, 255, 132, 0.35), transparent 55%),
+                  radial-gradient(circle at 80% 80%, rgba(0, 88, 51, 0.95), #000b06);
+      border: 1px solid rgba(124, 255, 132, 0.32);
+      box-shadow:
+        0 0 40px rgba(0, 0, 0, 0.9),
+        0 0 45px rgba(124, 255, 132, 0.22);
+      overflow: hidden;
+    }
+
+    .hero-orbit-core {
+      position: absolute;
+      inset: 18%;
+      border-radius: 50%;
+      border: 1px dashed rgba(232, 255, 232, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-orbit-core h3 {
+      font-size: 0.95rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    .hero-orbit-core span.big {
+      display: block;
+      font-size: 1.5rem;
+      margin-top: 4px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .hero-orbit-pill {
+      position: absolute;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 24, 15, 0.92);
+      border: 1px solid rgba(124, 255, 132, 0.5);
+      font-size: 0.7rem;
+      color: var(--text-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(8px);
+      white-space: nowrap;
+    }
+
+    .hero-orbit-pill span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(124, 255, 132, 0.9);
+    }
+
+    .hero-orbit-pill.p1 { top: 10%; left: 8%; }
+    .hero-orbit-pill.p2 { top: 20%; right: 4%; }
+    .hero-orbit-pill.p3 { bottom: 18%; left: 18%; }
+    .hero-orbit-pill.p4 { bottom: 10%; right: 18%; }
+
+    /* NAV (simple anchor helper) */
+    .top-nav {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: var(--max-width);
+      padding: 0 4px;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .top-nav-inner {
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(90deg, rgba(0, 31, 15, 0.94), rgba(0, 24, 14, 0.85));
+      border: 1px solid rgba(124, 255, 132, 0.18);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+    }
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.83rem;
+      color: var(--text-soft);
+    }
+
+    .nav-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 40%;
+      background: radial-gradient(circle at 30% 10%, var(--accent), rgba(0, 88, 51, 0.95));
+      border: 1px solid rgba(124, 255, 132, 0.55);
+      box-shadow: 0 0 18px rgba(124, 255, 132, 0.8);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      transition: background var(--transition-fast), color var(--transition-fast);
+    }
+
+    .nav-link:hover {
+      background: rgba(0, 88, 51, 0.65);
+      color: #ffffff;
+    }
+
+    @media (max-width: 720px) {
+      .top-nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    /* ABOUT SECTION */
+
+    #about {
+      background: radial-gradient(circle at top right, rgba(124, 255, 132, 0.08), transparent 60%);
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 28px;
+    }
+
+    @media (min-width: 880px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 40px;
+        align-items: center;
+      }
+    }
+
+    .about-highlight {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(124, 255, 132, 0.22);
+      background: linear-gradient(135deg, rgba(0, 31, 15, 0.96), rgba(0, 88, 51, 0.45));
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+    .about-highlight strong {
+      color: var(--accent);
+    }
+
+    .about-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(232, 255, 232, 0.15);
+      background: rgba(0, 9, 5, 0.9);
+      color: var(--text-soft);
+    }
+
+    .about-card {
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at top, rgba(124, 255, 132, 0.12), transparent 55%),
+                  linear-gradient(145deg, rgba(0, 31, 15, 0.96), rgba(0, 24, 14, 0.96));
+      border: 1px solid rgba(124, 255, 132, 0.3);
+      padding: 20px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: "";
+      position: absolute;
+      top: -90px;
+      right: -80px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124, 255, 132, 0.32), transparent 70%);
+      opacity: 0.8;
+    }
+
+    .about-card h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 10px;
+      color: var(--text-soft);
+    }
+
+    .about-list {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    .about-list li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .about-list span.bullet {
+      margin-top: 4px;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    /* EVENT SEGMENTS */
+
+    #segments {
+      background: radial-gradient(circle at center, rgba(0, 88, 51, 0.35), rgba(0, 10, 5, 1));
+    }
+
+    .segments-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    @media (min-width: 860px) {
+      .segments-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .segment-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at top left, rgba(124, 255, 132, 0.08), rgba(0, 24, 14, 0.97));
+      border: 1px solid rgba(124, 255, 132, 0.26);
+      padding: 18px 16px 20px;
+      overflow: hidden;
+      cursor: default;
+      transition:
+        transform var(--transition-med),
+        box-shadow var(--transition-med),
+        border-color var(--transition-med),
+        background var(--transition-med);
+    }
+
+    .segment-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at top, rgba(124, 255, 132, 0.15), transparent 55%),
+        radial-gradient(circle at bottom, rgba(0, 88, 51, 0.9), rgba(0, 10, 5, 1));
+      opacity: 0;
+      transition: opacity var(--transition-med);
+      z-index: 0;
+    }
+
+    .segment-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-glow);
+      border-color: var(--accent);
+    }
+
+    .segment-card:hover::before {
+      opacity: 1;
+    }
+
+    .segment-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .segment-label {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 6px;
+    }
+
+    .segment-title {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .segment-body {
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .segment-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(124, 255, 132, 0.4);
+      background: rgba(0, 12, 7, 0.96);
+      color: var(--text-soft);
+    }
+
+    .segment-glow-dot {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(124, 255, 132, 0.85);
+      box-shadow: 0 0 16px rgba(124, 255, 132, 0.7);
+      background: var(--accent);
+      top: 14px;
+      right: 16px;
+      opacity: 0.7;
+    }
+
+    /* EVENT DETAILS */
+
+    #details {
+      background: radial-gradient(circle at top left, rgba(124, 255, 132, 0.07), transparent 60%);
+    }
+
+    .details-grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 720px) {
+      .details-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .detail-card {
+      border-radius: var(--radius-lg);
+      padding: 16px 15px;
+      background: linear-gradient(135deg, rgba(0, 24, 14, 0.96), rgba(0, 31, 15, 0.94));
+      border: 1px solid rgba(124, 255, 132, 0.24);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .detail-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top, rgba(124, 255, 132, 0.18), transparent 55%);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .detail-card:hover::before {
+      opacity: 1;
+    }
+
+    .detail-icon {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .detail-label {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .detail-value-main {
+      font-size: 0.98rem;
+      font-weight: 500;
+    }
+
+    .detail-value-sub {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin-top: 4px;
+    }
+
+    /* REGISTRATION */
+
+    #registration {
+      background: radial-gradient(circle at center, rgba(0, 88, 51, 0.4), rgba(0, 11, 6, 1));
+    }
+
+    .registration-card {
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, rgba(0, 24, 14, 0.96), rgba(0, 31, 15, 0.98));
+      border: 1px solid rgba(124, 255, 132, 0.4);
+      padding: 20px 18px 22px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8);
+      display: grid;
+      gap: 20px;
+    }
+
+    @media (min-width: 900px) {
+      .registration-card {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      }
+    }
+
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      margin-top: 12px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(124, 255, 132, 0.35);
+    }
+
+    .fee-table thead {
+      background: linear-gradient(90deg, #005833, #003d25);
+    }
+
+    .fee-table th,
+    .fee-table td {
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .fee-table th {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .fee-table td {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    .fee-table tbody tr:nth-child(even) {
+      background: rgba(0, 31, 15, 0.9);
+    }
+
+    .fee-table tbody tr:nth-child(odd) {
+      background: rgba(0, 21, 10, 0.95);
+    }
+
+    .fee-tagline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .registration-note {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin-top: 8px;
+    }
+
+    .reg-highlight-box {
+      border-radius: var(--radius-lg);
+      padding: 14px 13px;
+      background: radial-gradient(circle at top left, rgba(124, 255, 132, 0.18), transparent 60%);
+      border: 1px solid rgba(124, 255, 132, 0.4);
+      font-size: 0.83rem;
+      color: var(--text-soft);
+    }
+
+    .reg-highlight-box strong {
+      color: var(--accent);
+    }
+
+    /* ORGANIZERS */
+
+    #organizers {
+      background: radial-gradient(circle at top, rgba(124, 255, 132, 0.12), transparent 60%);
+    }
+
+    .org-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    @media (min-width: 720px) {
+      .org-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .org-card {
+      border-radius: var(--radius-lg);
+      padding: 13px 13px 14px;
+      background: linear-gradient(140deg, rgba(0, 24, 14, 0.96), rgba(0, 31, 15, 0.97));
+      border: 1px solid rgba(124, 255, 132, 0.25);
+      position: relative;
+      overflow: hidden;
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .org-card::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: -20px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 1px solid rgba(124, 255, 132, 0.3);
+      opacity: 0.4;
+    }
+
+    .org-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    .org-name {
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    .org-tag {
+      font-size: 0.72rem;
+      color: var(--accent);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 26px 20px 26px;
+      background: linear-gradient(180deg, #000b06, #000502);
+      border-top: 1px solid rgba(124, 255, 132, 0.28);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    @media (min-width: 720px) {
+      .footer-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-link {
+      color: var(--text-soft);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .footer-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), var(--soft-gold));
+      transition: width var(--transition-fast);
+    }
+
+    .footer-link:hover::after {
+      width: 100%;
+    }
+
+    .footer-credit span {
+      color: var(--accent);
+    }
+
+    /* MOBILE TWEAKS */
+
+    @media (max-width: 480px) {
+      .btn-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- Top Nav -->
+    <div class="top-nav">
+      <div class="top-nav-inner">
+        <div class="nav-brand">
+          <div class="nav-dot"></div>
+          <div>
+            <div style="font-size:0.8rem; font-weight:500;">TRISCEND 1.0</div>
+            <div style="font-size:0.7rem;" class="muted">IEEE CUET WIE Affinity Group Student Branch</div>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#segments" class="nav-link">Segments</a>
+          <a href="#details" class="nav-link">Event Info</a>
+          <a href="#registration" class="nav-link">Registration</a>
+          <a href="#organizers" class="nav-link">Organizers</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section id="hero">
+      <canvas id="hero-particles"></canvas>
+
+      <div class="hero-inner">
+        <div class="hero-left" data-parallax>
+          <div class="pill">
+            <span class="dot"></span>
+            NATIONAL-LEVEL FLAGSHIP EVENT • IEEE PROFESSIONAL STANDARD
+          </div>
+
+          <h1 class="hero-title">
+            <span class="accent">TRISCEND 1.0</span><br />
+            Inspiring Innovation, Ethics &amp; Futures
+          </h1>
+
+          <p class="hero-tagline">
+            A premium, ethics-driven innovation platform where STEM, policy, and imagination converge
+            to design mindful futures for the next generation.
+          </p>
+
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span class="icon">📍</span>
+              <span>Chittagong University of Engineering &amp; Technology (CUET)</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="icon">⚡</span>
+              <span>Curated by IEEE CUET WIE Affinity Group Student Branch</span>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <!-- Replace href with actual registration link -->
+            <a href="#registration" class="btn">
+              Register Now
+              <span>↗</span>
+            </a>
+            <!-- Replace href with actual rulebook file -->
+            <a href="rulebook.pdf" class="btn btn-secondary" target="_blank" rel="noopener">
+              Download Rulebook
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right" data-parallax>
+          <div class="hero-orbit">
+            <div class="hero-orbit-core">
+              <div>
+                <h3>INNOVATE WITH</h3>
+                <span class="big">ETHICS</span>
+                <p class="muted" style="font-size:0.75rem;">
+                  Futuristic minds crafting responsible, sustainable, and human-centric solutions.
+                </p>
+              </div>
+            </div>
+
+            <div class="hero-orbit-pill p1">
+              <span class="dot"></span>
+              <span>Mindful Futures</span>
+            </div>
+            <div class="hero-orbit-pill p2">
+              <span class="dot"></span>
+              <span>Policy Making Challenge</span>
+            </div>
+            <div class="hero-orbit-pill p3">
+              <span class="dot"></span>
+              <span>Visions for Tomorrow</span>
+            </div>
+            <div class="hero-orbit-pill p4">
+              <span class="dot"></span>
+              <span>Ethics × Sustainability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container reveal">
+        <h2 class="section-title">About TRISCEND</h2>
+        <p class="section-subtitle">
+          TRISCEND 1.0 is a national-level flagship event that fuses mindful innovation, ethical decision-making, and futuristic ideation.
+          Designed under IEEE and WIE values, the event invites students to reimagine the future with responsibility, inclusivity, and sustainability at its core.
+        </p>
+
+        <div class="about-grid">
+          <div>
+            <div class="about-highlight">
+              TRISCEND 1.0 nurtures <strong>ethical innovators</strong> who not only push technological boundaries,
+              but also critically consider impact on people, communities, and the planet. The event celebrates
+              <strong>responsible STEM leadership</strong> through structured problem solving, policy thinking, and artistic foresight.
+            </div>
+
+            <div class="about-badges">
+              <span class="badge">Ethical Innovation</span>
+              <span class="badge">IEEE WIE Leadership</span>
+              <span class="badge">Sustainability-Centric</span>
+              <span class="badge">Futuristic Storytelling</span>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <h3>Powered by IEEE CUET WIE AG SB</h3>
+            <ul class="about-list">
+              <li>
+                <span class="bullet">◆</span>
+                <span>Flagship initiative of <strong>IEEE CUET WIE Affinity Group Student Branch</strong>, aligned with IEEE’s
+                global mission of advancing technology for humanity.</span>
+              </li>
+              <li>
+                <span class="bullet">◆</span>
+                <span>Encourages <strong>female and gender-diverse participation</strong> in STEM leadership, policy,
+                and future-driven discourse.</span>
+              </li>
+              <li>
+                <span class="bullet">◆</span>
+                <span>Promotes <strong>academic integrity, professionalism, and ethics</strong> across every submission,
+                from case solutions to policy drafts and art narratives.</span>
+              </li>
+              <li>
+                <span class="bullet">◆</span>
+                <span>Creates a premium, well-mentored experience with a strong emphasis on <strong>readability,
+                communication, and impact</strong>.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT SEGMENTS -->
+    <section id="segments">
+      <div class="container reveal">
+        <h2 class="section-title">Event Segments</h2>
+        <p class="section-subtitle">
+          TRISCEND 1.0 is crafted around three interconnected tracks that balance analytical rigor, ethical responsibility,
+          and visionary storytelling — ensuring a holistic journey from ideas to impact.
+        </p>
+
+        <div class="segments-grid">
+          <!-- Mindful Futures -->
+          <article class="segment-card">
+            <div class="segment-glow-dot"></div>
+            <div class="segment-inner">
+              <p class="segment-label">Segment 01</p>
+              <h3 class="segment-title">Mindful Futures</h3>
+              <div class="segment-body">
+                Dive into a <strong>STEM-based case competition</strong> where participants decode complex scenarios
+                through analytical, ethical, and future-aware thinking. Teams must balance technical feasibility
+                with empathy, sustainability, and societal impact.
+              </div>
+              <div class="segment-tags">
+                <span class="tag">STEM Case Solving</span>
+                <span class="tag">Ethical Constraints</span>
+                <span class="tag">Impact Assessment</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Policy Making Challenge -->
+          <article class="segment-card">
+            <div class="segment-glow-dot"></div>
+            <div class="segment-inner">
+              <p class="segment-label">Segment 02</p>
+              <h3 class="segment-title">Policy Making Challenge</h3>
+              <div class="segment-body">
+                Design <strong>policy frameworks</strong> that respond to real-world STEM issues — from AI regulation
+                and digital equity to sustainable infrastructure and energy. Participants craft structured documents,
+                recommendations, and ethical guidelines for tomorrow’s decision-makers.
+              </div>
+              <div class="segment-tags">
+                <span class="tag">STEM Policy Design</span>
+                <span class="tag">Real-World Issues</span>
+                <span class="tag">Ethics &amp; Governance</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Visions for Tomorrow -->
+          <article class="segment-card">
+            <div class="segment-glow-dot"></div>
+            <div class="segment-inner">
+              <p class="segment-label">Segment 03</p>
+              <h3 class="segment-title">Visions for Tomorrow</h3>
+              <div class="segment-body">
+                A <strong>futuristic visual art competition</strong> where imagination meets sustainability.
+                Through digital illustrations, concept art, or 3D visuals, participants portray futures that are
+                technologically advanced yet deeply human and environmentally conscious.
+              </div>
+              <div class="segment-tags">
+                <span class="tag">Futuristic Visual Art</span>
+                <span class="tag">Sustainability Narratives</span>
+                <span class="tag">Digital &amp; 3D Graphics</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT DETAILS -->
+    <section id="details">
+      <div class="container reveal">
+        <h2 class="section-title">Event Details</h2>
+        <p class="section-subtitle">
+          Stay aligned with key timelines, venue details, and session hours to ensure your team experiences
+          TRISCEND 1.0 with clarity, punctuality, and preparedness.
+        </p>
+
+        <div class="details-grid">
+          <div class="detail-card">
+            <div class="detail-icon">📅</div>
+            <div class="detail-label">Event Date</div>
+            <div class="detail-value-main">To Be Announced</div>
+            <div class="detail-value-sub">Stay tuned on the official IEEE CUET WIE AG SB channels for the final schedule.</div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-icon">⏰</div>
+            <div class="detail-label">Time</div>
+            <div class="detail-value-main">Full-day curated experience</div>
+            <div class="detail-value-sub">Segment-wise timelines, briefing slots, and submission windows will be shared upon registration.</div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-icon">📍</div>
+            <div class="detail-label">Venue</div>
+            <div class="detail-value-main">CUET Campus</div>
+            <div class="detail-value-sub">On-campus proceedings, with selective digital communication &amp; resources shared online.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGISTRATION -->
+    <section id="registration">
+      <div class="container reveal">
+        <h2 class="section-title">Registration &amp; Fees</h2>
+        <p class="section-subtitle">
+          TRISCEND 1.0 is open to teams from diverse academic backgrounds. IEEE members enjoy preferential fees,
+          while non-members are equally encouraged to participate and experience the IEEE ecosystem.
+        </p>
+
+        <div class="registration-card">
+          <div>
+            <div class="pill">
+              <span class="dot"></span> Team-based entry • Limited slots
+            </div>
+            <h3 style="margin-top:14px; font-size:1.1rem;">IEEE vs Non-IEEE Fee Structure</h3>
+
+            <!-- Replace values with actual fees when finalized -->
+            <table class="fee-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>IEEE Members</th>
+                  <th>Non-IEEE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mindful Futures</td>
+                  <td>To be announced</td>
+                  <td>To be announced</td>
+                </tr>
+                <tr>
+                  <td>Policy Making Challenge</td>
+                  <td>To be announced</td>
+                  <td>To be announced</td>
+                </tr>
+                <tr>
+                  <td>Visions for Tomorrow</td>
+                  <td>To be announced</td>
+                  <td>To be announced</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="fee-tagline">
+              IEEE members benefit from reduced registration fees as part of the professional community structure,
+              while maintaining equal judging standards for all.
+            </p>
+          </div>
+
+          <div>
+            <div class="reg-highlight-box">
+              <strong>Team Registration:</strong> Each team registers once and can choose the segment(s) they wish to participate in.
+              Please review the rulebook carefully before final submission.
+              <br /><br />
+              <strong>Ethical Note:</strong> Plagiarism, AI-generated content without disclosure, and misrepresentation are
+              strictly discouraged and may lead to disqualification.
+            </div>
+
+            <div class="btn-row" style="margin-top:20px;">
+              <!-- Replace href with Google Form / portal link -->
+              <a href="https://example.com/register" class="btn" target="_blank" rel="noopener">
+                Register Your Team
+                <span>↗</span>
+              </a>
+            </div>
+
+            <p class="registration-note">
+              After registration, teams will receive confirmation, timelines, and submission guidelines via email and
+              official communication channels.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORGANIZERS -->
+    <section id="organizers">
+      <div class="container reveal">
+        <h2 class="section-title">Organizing Bodies</h2>
+        <p class="section-subtitle">
+          TRISCEND 1.0 is powered by a coalition of IEEE societies and chapters at CUET, each bringing domain expertise
+          from healthcare, robotics, energy, photonics, antennas, and signal processing.
+        </p>
+
+        <div class="org-grid">
+          <div class="org-card">
+            <div class="org-label">Lead Organizer</div>
+            <div class="org-name">IEEE CUET WIE Affinity Group Student Branch</div>
+            <div class="org-tag">Flagship event host • Inclusivity &amp; ethics at the core</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-label">Collaborator</div>
+            <div class="org-name">IEEE EMBS CUET Student Branch Chapter</div>
+            <div class="org-tag">Engineering in medicine &amp; biology perspectives</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-label">Collaborator</div>
+            <div class="org-name">IEEE RAS CUET Student Branch Chapter</div>
+            <div class="org-tag">Robotics &amp; autonomous systems for future cities</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-label">Collaborator</div>
+            <div class="org-name">IEEE PES CUET Student Branch Chapter</div>
+            <div class="org-tag">Power &amp; energy sustainability insights</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-label">Collaborator</div>
+            <div class="org-name">IEEE Signal Processing Society CUET Student Branch Chapter</div>
+            <div class="org-tag">Signal, data &amp; intelligent decision-making</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-label">Collaborator</div>
+            <div class="org-name">IEEE Photonics Society CUET Student Branch Chapter</div>
+            <div class="org-tag">Light-driven futures &amp; photonic innovation</div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-label">Collaborator</div>
+            <div class="org-name">IEEE APS CUET Student Branch Chapter</div>
+            <div class="org-tag">Antennas, propagation &amp; communication frontiers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-links">
+          <!-- Replace with real links -->
+          <a href="https://facebook.com" class="footer-link" target="_blank" rel="noopener">Facebook Page</a>
+          <a href="rulebook.pdf" class="footer-link" target="_blank" rel="noopener">Rulebook</a>
+          <a href="mailto:contact@example.com" class="footer-link">Contact</a>
+        </div>
+        <div class="footer-credit">
+          Developed by <span>Md. Saidul Islam</span> • For TRISCEND 1.0
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // ===== Hero Particle Background =====
+    (function () {
+      const canvas = document.getElementById("hero-particles");
+      const ctx = canvas.getContext("2d");
+      let particles = [];
+      const PARTICLE_COUNT = 60;
+      const MAX_DISTANCE = 140;
+
+      function resizeCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width * window.devicePixelRatio;
+        canvas.height = rect.height * window.devicePixelRatio;
+        ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
+      }
+
+      function createParticles() {
+        particles = [];
+        const rect = canvas.getBoundingClientRect();
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+          particles.push({
+            x: Math.random() * rect.width,
+            y: Math.random() * rect.height,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: (Math.random() - 0.5) * 0.6,
+            r: Math.random() * 2 + 1
+          });
+        }
+      }
+
+      function updateParticles() {
+        const rect = canvas.getBoundingClientRect();
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > rect.width) p.vx *= -1;
+          if (p.y < 0 || p.y > rect.height) p.vy *= -1;
+        });
+      }
+
+      function drawParticles() {
+        const rect = canvas.getBoundingClientRect();
+        ctx.clearRect(0, 0, rect.width, rect.height);
+
+        // Lines
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const p1 = particles[i];
+            const p2 = particles[j];
+            const dx = p1.x - p2.x;
+            const dy = p1.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < MAX_DISTANCE) {
+              const alpha = 1 - dist / MAX_DISTANCE;
+              ctx.strokeStyle = "rgba(124,255,132," + (0.11 * alpha) + ")";
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        // Dots
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(232,255,232,0.9)";
+          ctx.fill();
+        });
+      }
+
+      function loop() {
+        updateParticles();
+        drawParticles();
+        requestAnimationFrame(loop);
+      }
+
+      function init() {
+        resizeCanvas();
+        createParticles();
+        loop();
+      }
+
+      let resizeTimeout;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          resizeCanvas();
+          createParticles();
+        }, 200);
+      });
+
+      init();
+    })();
+
+    // ===== Scroll Reveal with IntersectionObserver =====
+    (function () {
+      const revealElements = document.querySelectorAll(".reveal");
+      const options = {
+        threshold: 0.15
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+
+      revealElements.forEach(el => observer.observe(el));
+    })();
+
+    // ===== Simple Parallax on Hero Content =====
+    (function () {
+      const parallaxItems = document.querySelectorAll("[data-parallax]");
+
+      function handleScroll() {
+        const scrollY = window.scrollY;
+        parallaxItems.forEach((el, index) => {
+          const strength = index === 0 ? 0.12 : 0.18;
+          el.style.transform = "translateY(" + scrollY * strength * -1 + "px)";
+        });
+      }
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll();
+    })();
+  </script>
+</body>
+</html>
