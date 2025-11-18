@@ -941,37 +941,39 @@
       color: var(--accent);
     }
 
-    /* MOBILE TWEAKS */
+   /* ----- FINAL MOBILE NAVBAR FIX ----- */
+@media (max-width: 720px) {
 
-    @media (max-width: 480px) {
-      .btn-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
-    }
-    #hero {
-  padding-top: 110px !important;
-}
-    @media (max-width: 720px) {
-
-  /* Push hero content downward */
-  #hero {
-    padding-top: 160px !important;
-  }
-
-  /* Increase nav inner spacing */
+  /* Reduce navbar height */
   .top-nav-inner {
-    padding: 16px 14px !important;
-  }
-
-  /* Stack nav links vertically */
-  .nav-links {
     flex-direction: column !important;
     align-items: flex-start !important;
+    gap: 6px !important;
+    padding: 12px 14px !important;
+  }
+
+  /* Make nav links horizontal & scrollable */
+  .nav-links {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 16px !important;
     width: 100%;
-    gap: 8px !important;
+    white-space: nowrap !important;
+    padding-bottom: 4px;
+  }
+
+  /* Prevent giant blob size */
+  .nav-link {
+    padding: 6px 10px !important;
+  }
+
+  /* Ensure hero section starts BELOW the nav */
+  #hero {
+    padding-top: 190px !important;
   }
 }
+
   </style>
 </head>
 <body>
@@ -1514,6 +1516,7 @@
   </script>
 </body>
 </html>
+
 
 
 
