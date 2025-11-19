@@ -979,6 +979,44 @@
 .hero-orbit-pill {
   display: none !important;
 }
+    /* ----- COUNTDOWN SECTION ----- */
+
+#countdown {
+  background: radial-gradient(circle at top, rgba(124, 255, 132, 0.10), transparent 70%);
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.countdown-box {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.count-num {
+  background: rgba(0, 31, 15, 0.85);
+  border: 1px solid rgba(124, 255, 132, 0.3);
+  border-radius: 16px;
+  padding: 18px 28px;
+  min-width: 90px;
+  box-shadow: 0 0 18px rgba(124, 255, 132, 0.18);
+}
+
+.count-num span {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--accent);
+  display: block;
+}
+
+.count-num small {
+  color: var(--text-soft);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
   </style>
 </head>
 <body>
@@ -1205,6 +1243,33 @@
         </div>
       </div>
     </section>
+    
+<!-- Count Down -->
+    <section id="countdown">
+  <div class="container">
+    <h2 class="section-title">Countdown to TRISCEND 1.0</h2>
+    <p class="section-subtitle">Get ready—The event begins soon!</p>
+
+    <div class="countdown-box">
+      <div class="count-num">
+        <span id="days">00</span>
+        <small>Days</small>
+      </div>
+      <div class="count-num">
+        <span id="hours">00</span>
+        <small>Hours</small>
+      </div>
+      <div class="count-num">
+        <span id="minutes">00</span>
+        <small>Minutes</small>
+      </div>
+      <div class="count-num">
+        <span id="seconds">00</span>
+        <small>Seconds</small>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- EVENT DETAILS -->
     <section id="details">
@@ -1524,9 +1589,42 @@
       window.addEventListener("scroll", handleScroll, { passive: true });
       handleScroll();
     })();
+    /* ----- COUNTDOWN TIMER ----- */
+/* Set your event date here */
+const eventDate = new Date("2025-12-04T00:00:00").getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+
+  if (distance <= 0) {
+    document.getElementById("days").innerHTML = "00";
+    document.getElementById("hours").innerHTML = "00";
+    document.getElementById("minutes").innerHTML = "00";
+    document.getElementById("seconds").innerHTML = "00";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
   </script>
 </body>
 </html>
+
 
 
 
