@@ -1019,6 +1019,78 @@
 #countdown .section-subtitle {
   margin-left: 20px;
 }
+    /* ----- CAMPUS AMBASSADOR SECTION ----- */
+
+#campus-ambassadors {
+  background: radial-gradient(circle at top, rgba(124, 255, 132, 0.10), transparent 70%);
+  padding: 80px 20px;
+}
+
+.ambassador-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+@media (min-width: 860px) {
+  .ambassador-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.amb-card {
+  background: rgba(0, 31, 15, 0.92);
+  border: 1px solid rgba(124, 255, 132, 0.25);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 0 24px rgba(124, 255, 132, 0.15);
+  transition: 0.3s ease;
+}
+
+.amb-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 28px rgba(124, 255, 132, 0.35);
+  transform: translateY(-5px);
+}
+
+.amb-title {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+.amb-list {
+  list-style: none;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+  padding-left: 0;
+}
+
+.amb-list li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.amb-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1rem;
+}
+.segment-title a {
+  color: var(--accent) !important;   /* Neon green */
+  text-decoration: none !important;
+}
+
+.segment-title a:hover {
+  color: #E8FFE8 !important;         /* Soft white-green on hover */
+  text-decoration: underline;
+}
 
   </style>
 </head>
@@ -1688,6 +1760,7 @@ updateCountdown();
   </script>
 </body>
 </html>
+
 
 
 
